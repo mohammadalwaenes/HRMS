@@ -38,6 +38,8 @@ It provides full management for employees, positions, schedules, vacations, and 
 git clone https://github.com/yourusername/HRMS.git
 cd HRMS
 
+---
+
 2. **Install PHP dependencies:**
 ```bash
 composer install
