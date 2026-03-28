@@ -1,68 +1,29 @@
-# HRMS Laravel Project
+# HRMS - Human Resource Management System
 
-**HRMS** (Human Resource Management System) is a web application built with **Laravel 10**.  
-It provides full management for employees, positions, schedules, vacations, and trainees, along with admin and moderator roles. The project includes **web views** and **RESTful API endpoints**.
-
----
-
-## Features
-
-- Employee management (CRUD)
-- Position management with salaries
-- Trainee tracking and onboarding
-- Vacation management with statistics
-- Schedule management and employee assignment
-- UUID validation for employees
-- Admin & moderator panel with roles and permissions
-- PDF export for training completion
-- API ready for frontend consumption
-
----
-
-## Technologies Used
-
-- **Laravel 10**
-- **PHP 8+**
-- **MySQL**
-- **Vite + TailwindCSS** for frontend assets
-- **Sanctum** for API authentication
-- **DOMPDF** for PDF generation
+## Overview
+This is a Laravel 10-based Human Resource Management System (HRMS) project.  
+It includes Employee management, Trainee management, Schedules, Positions, Vacations, and UUID verification.
 
 ---
 
 ## Installation
 
 1. **Clone the repository:**
-
 ```bash
 git clone https://github.com/yourusername/HRMS.git
 cd HRMS
-
----
-
-2. **Install PHP dependencies:**
-```bash
+Install PHP dependencies:
 composer install
-
-3. **Install Node dependencies (frontend assets):**
-```bash
+Install Node dependencies (frontend assets):
 npm install
 npm run dev
-
-4. **Configure environment variables:**
-```bash
+Configure environment variables:
 cp .env.example .env
 php artisan key:generate
-
-5. **Run migrations and seeders:**
-```bash
+Run migrations and seeders:
 php artisan migrate --seed
-
-6. **Serve the application:**
-```bash
+Serve the application:
 php artisan serve
-
-
 API Endpoints
 Method	Endpoint	Description	Authentication
 GET	/api/employee	List all employees	Sanctum auth
@@ -79,7 +40,7 @@ POST	/api/positions	Create position	Sanctum auth
 GET	/api/positions/{id}	Show position details	Sanctum auth
 PUT	/api/positions/{id}	Update position	Sanctum auth
 DELETE	/api/positions/{id}	Delete position	Sanctum auth
-GET	`/api/positions/{id}/employees?status=employee	trainee	trained`
+GET	/api/positions/{id}/employees?status=employee	trainee	trained
 GET	/api/trainee	List trainees	Sanctum auth
 GET	/api/trained	List trained employees	Sanctum auth
 GET	/api/trained/{id}	Show trained employee	Sanctum auth
@@ -102,11 +63,12 @@ POST	/api/uuid/check	Validate UUID	Guest
 
 Note: All API routes (except login/logout/UUID) require authentication via Sanctum.
 
-
 Authentication
 Login: /api/login (POST with username & password)
 Logout: /api/logout (POST)
+
 Admin and Moderator roles with permission checks are included.
+
 Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss.
